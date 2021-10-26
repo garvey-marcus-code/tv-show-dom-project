@@ -1,3 +1,24 @@
 #root {
   color: red;
+  width: 90%;
+  height: 100vh;
+}
+
+.card {
+  width: 30%;
+  border-radius: 3px;
+  box-shadow: 10px 5px 5px #333;
+  background-color: #999;
+  margin: 1rem;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-info {
+  background-color: #fff;
+  padding: 2rem;
+  max-height: 100%;
+  color: #000;
 }
