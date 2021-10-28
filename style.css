@@ -2,6 +2,8 @@
   color: red;
   width: 90%;
   height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card {
