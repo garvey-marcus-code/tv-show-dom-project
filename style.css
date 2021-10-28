@@ -12,6 +12,7 @@
   box-shadow: 10px 5px 5px #333;
   background-color: #999;
   margin: 1rem;
+  border: #000 solid 1px;
 }
 
 .card img {
@@ -23,4 +24,6 @@
   padding: 2rem;
   max-height: 100%;
   color: #000;
+  border-top: #000 solid 1px;
+  border-bottom: #000 solid 1px;
 }
