@@ -6,10 +6,34 @@ function setup() {
 
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
-  rootElem.textContent = `Got ${episodeList.length} episode(s)`;
+  //rootElem.textContent = `Got ${episodeList.length} episode(s)`;
+  let myShow = [];
 
-// Creating an element for all the shows on the page
-  function showTvShows(show) {
+  // Adding a live search bar input field
+  let inputField = document.createElement("input");
+  inputField.id = "searchBar";
+  inputField.name = "searchBar";
+  inputField.type = "search";
+  inputField.placeholder = "Seach for a tv show";
+  rootElem.appendChild(inputField);
+  inputField.insertAdjacentHTML(
+    "afterend",
+    "This will be the shows/total shows after searching in the input"
+  );
+  inputField.addEventListener("keyup", (e) => {
+    let searchString = e.target.value.toLowerCase();
+
+    let filteredShows = myShow.filter((show) => {
+      return (
+        show.name.toLowerCase().includes(searchString) ||
+        show.summary.toLowerCase().includes(searchString)
+      );
+    });
+
+  });
+
+  // Creating an element for all the shows on the page
+  function showTvShows(shows) {
     for (let index = 0; index < episodeList.length; index++) {
       let card = document.createElement("article");
       card.className = "card";
