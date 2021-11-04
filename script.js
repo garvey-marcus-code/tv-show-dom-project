@@ -7,7 +7,6 @@ function setup() {
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
   //rootElem.textContent = `Got ${episodeList.length} episode(s)`;
-  let myShow = [];
 
   // Adding a live search bar input field
   let inputField = document.createElement("input");
@@ -20,20 +19,15 @@ function makePageForEpisodes(episodeList) {
     "afterend",
     "This will be the shows/total shows after searching in the input"
   );
+  // Adding functionality to the input field search bar
   inputField.addEventListener("keyup", (e) => {
     let searchString = e.target.value.toLowerCase();
-
-    let filteredShows = myShow.filter((show) => {
-      return (
-        show.name.toLowerCase().includes(searchString) ||
-        show.summary.toLowerCase().includes(searchString)
-      );
-    });
-
   });
 
+  // conditional statement to make search field equal to page information
+
   // Creating an element for all the shows on the page
-  function showTvShows(shows) {
+  function showTvShows() {
     for (let index = 0; index < episodeList.length; index++) {
       let card = document.createElement("article");
       card.className = "card";
@@ -46,6 +40,12 @@ function makePageForEpisodes(episodeList) {
         `;
       rootElem.appendChild(card);
     }
+        let filteredShows = showTvShows().filter((show) => {
+          return (
+            show.name.toLowerCase().includes(searchString) ||
+            show.summary.toLowerCase().includes(searchString)
+          );
+        });
   }
 
   showTvShows();
