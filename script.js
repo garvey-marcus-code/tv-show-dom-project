@@ -6,7 +6,11 @@ function setup() {
 
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
+  let topDiv = document.createElement("div");
+  let bottomDiv = document.createElement("div");
   //rootElem.textContent = `Got ${episodeList.length} episode(s)`;
+  topDiv.id = "top";
+  bottomDiv.id = "bottom";
 
   // Adding a live search bar input field
   let inputField = document.createElement("input");
@@ -14,7 +18,8 @@ function makePageForEpisodes(episodeList) {
   inputField.name = "searchBar";
   inputField.type = "search";
   inputField.placeholder = "Seach for a tv show";
-  rootElem.appendChild(inputField);
+  rootElem.appendChild(topDiv);
+  topDiv.appendChild(inputField)
   inputField.insertAdjacentHTML(
     "afterend",
     "This will be the shows/total shows after searching in the input"
@@ -34,7 +39,7 @@ function makePageForEpisodes(episodeList) {
   // conditional statement to make search field equal to page information
 
   // Creating an element for all the shows on the page
-  function showTvShows() {
+  function showTvShows(tvShow) {
     for (let index = 0; index < episodeList.length; index++) {
       let card = document.createElement("article");
       card.className = "card";
@@ -45,7 +50,8 @@ function makePageForEpisodes(episodeList) {
         <img src=${episodeList[index].image.medium}>
         ${episodeList[index].summary}
         `;
-      rootElem.appendChild(card);
+      rootElem.appendChild(bottomDiv);
+      bottomDiv.appendChild(card)
     }
   }
 

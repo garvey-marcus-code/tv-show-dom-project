@@ -2,12 +2,21 @@
   color: red;
   width: 90%;
   height: 100vh;
+
+}
+
+#top {
+  width: 100%;
+}
+
+#bottom {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;  
 }
 
 #searchBar {
-  width: 90%;
+  width: 70%;
   height: 32px;
   border-radius: 3px;
   border: 1px solid #999;
