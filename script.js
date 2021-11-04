@@ -24,6 +24,13 @@ function makePageForEpisodes(episodeList) {
     let searchString = e.target.value.toLowerCase();
   });
 
+  let filteredShows = showTvShows().filter((show) => {
+    return (
+      show.name.toLowerCase().includes(searchString) ||
+      show.summary.toLowerCase().includes(searchString)
+    );
+  });
+
   // conditional statement to make search field equal to page information
 
   // Creating an element for all the shows on the page
@@ -40,12 +47,6 @@ function makePageForEpisodes(episodeList) {
         `;
       rootElem.appendChild(card);
     }
-        let filteredShows = showTvShows().filter((show) => {
-          return (
-            show.name.toLowerCase().includes(searchString) ||
-            show.summary.toLowerCase().includes(searchString)
-          );
-        });
   }
 
   showTvShows();
