@@ -2,14 +2,16 @@
 function setup() {
   const allEpisodes = getAllEpisodes();
   makePageForEpisodes(allEpisodes);
+  createFooter();
 }
 
 function makePageForEpisodes(episodeList) {
-  const rootElem = document.getElementById("root");
-  rootElem.textContent = `Got ${episodeList.length} episode(s)`;
+  const mainDiv = document.getElementById("main");
+  const headDiv = document.getElementById("header");
+  headDiv.textContent = `Got ${episodeList.length} episode(s)`;
 
-// Creating an element for all the shows on the page
-  function showTvShows(show) {
+  // Creating an element for all the shows on the page
+  function showTvShows() {
     for (let index = 0; index < episodeList.length; index++) {
       let card = document.createElement("article");
       card.className = "card";
@@ -20,13 +22,23 @@ function makePageForEpisodes(episodeList) {
         <img src=${episodeList[index].image.medium}>
         ${episodeList[index].summary}
         `;
-      rootElem.appendChild(card);
+      mainDiv.appendChild(card);
     }
   }
 
   showTvShows();
 
   // console.log(episodeList);
+}
+
+function createFooter() {
+  const footer = document.getElementById("footer");
+  const mainLink = document.createElement("a");
+  const textLink = document.createTextNode("https://www.tvmaze.com/");
+  mainLink.appendChild(textLink);
+  mainLink.title = "TVMaze.com";
+  mainLink.href = "https://www.tvmaze.com/";
+  footer.appendChild(mainLink);
 }
 
 window.onload = setup;
