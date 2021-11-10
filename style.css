@@ -1,3 +1,48 @@
 #root {
   color: red;
+  width: 90%;
+  height: 100vh;
+
+}
+
+#top {
+  width: 100%;
+}
+
+#bottom {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+#searchBar {
+  width: 70%;
+  height: 32px;
+  border-radius: 3px;
+  border: 1px solid #999;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 1rem;
+}
+
+.card {
+  width: 30%;
+  border-radius: 3px;
+  box-shadow: 10px 5px 5px #333;
+  background-color: #999;
+  margin: 1rem;
+  border: #000 solid 1px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-info {
+  background-color: #fff;
+  padding: 2rem;
+  max-height: 100%;
+  color: #000;
+  border-top: #000 solid 1px;
+  border-bottom: #000 solid 1px;
 }
